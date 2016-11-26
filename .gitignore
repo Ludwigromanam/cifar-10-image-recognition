@@ -1,3 +1,6 @@
+# possui um tamanho maior que o github aceita
+src/examples/hist_feature_test.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -146,6 +149,7 @@ fabric.properties
 
 ### Vagrant ###
 .vagrant/
+Vagrantfile
 
 
 ### Windows ###
