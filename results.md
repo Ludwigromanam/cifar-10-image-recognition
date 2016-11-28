@@ -18,3 +18,155 @@ encoding com todos os pixels preto e branco e standartized
 models = [mlp_1_layer(100), mlp_1_layer(300), mlp_1_layer(500), mlp_1_layer(700), mlp_1_layer(900)]
 encoding com todos os pixels preto e branco e standartized
 24%, 22%, 22%, 26%, 23%
+
+models = [mlp_3_layer(300, 700, 300)]
+encoding com todos os pixels preto e branco e standartized. Usando sigmoid nos layers internos
+25% (2000 iterações)
+
+models = [mlp_3_layer(700, 500, 300)]
+encoding com todos os pixels preto e branco e standartized. Usando sigmoid nos layers internos
+27% (2000 iterações)
+
+models = [mlp_3_layer(900, 700, 500)]
+encoding com todos os pixels preto e branco e standartized. Usando sigmoid nos layers internos
+27% (max: 29) (2000 iterações)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels preto e branco e standartized. Usando sigmoid nos layers internos
+27% (2000 iterações)
+
+models = [mlp_3_layer(300, 500, 700)]
+encoding com todos os pixels preto e branco e standartized. Usando sigmoid nos layers internos
+10% (2000 iterações)
+
+models = [mlp_1_layer(30)]
+encoding com todos os pixels standartized
+25% (10000)
+
+models = [mlp_1_layer(30)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+28% (10000)
+
+models = [mlp_2_layer(30, 30)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+31% (2000)
+
+models = [mlp_2_layer(300, 100)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+31% (2000)
+
+models = [mlp_2_layer(300, 300)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+33% (2000)
+
+models = [mlp_2_layer(300, 500)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+30% (2000)
+
+models = [mlp_2_layer(300, 300)]
+encoding com todos os pixels standartized. Usando elu/sigmoid
+31% (2000)
+
+models = [mlp_2_layer(1500, 1500)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+10% (não terminei de rodar)
+
+models = [mlp_1_layer(1500)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+10% (não terminei de rodar)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+32% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando sigmoid/relu/sigmoid
+30% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando relu/relu/sigmoid
+35% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+38% (2000) 35% numa segunda tentativa
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando softplus/softplus/sigmoid
+36% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando elu/elu/tanh
+10% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando tanh/tanh/tanh
+26% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando tanh/tanh/sigmoid
+27% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando relu6/relu6/sigmoid
+26% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando relu/relu/relu
+10% (2000)
+
+models = [mlp_3_layer(300, 300, 300)]
+encoding com todos os pixels standartized. Usando relu6/relu6/relu6
+10% (2000)
+
+models = [mlp_3_layer(300, 500, 300)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+34% (2000)
+
+models = [mlp_3_layer(300, 700, 300)]
+encoding com todos os pixels standartized. Usando sigmoid nos layers internos
+31% (2000) mais chegou a 35% T.T
+
+models = [mlp_3_layer(900, 700, 500)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+10% (2000)
+
+models = [mlp_3_layer(30, 300, 30)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+35% (2000)
+
+models = [mlp_3_layer(700, 700, 700)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+10% (2000)
+
+models = [mlp_3_layer(500, 500, 500)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+26% (2000)
+
+models = [mlp_3_layer(200, 200, 200)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+37% (2000) 40% max
+
+models = [mlp_3_layer(150, 150, 150)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+36% (2000) 38% max
+
+models = [mlp_3_layer(100, 100, 100)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+36% (2000)
+
+models = [mlp_3_layer(50, 50, 50)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+30% (2000)
+
+models = [mlp_3_layer(30, 30, 30)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+32% (2000)
+
+models = [mlp_3_layer(10, 10, 10)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+28% (2000)
+
+models = [mlp_3_layer(500, 700, 500)]
+encoding com todos os pixels standartized. Usando elu/elu/sigmoid
+10% (2000)

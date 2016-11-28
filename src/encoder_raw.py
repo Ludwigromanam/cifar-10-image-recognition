@@ -35,7 +35,7 @@ def generate_vector(img_path):
 
 def encode():
 
-	test_folder = "./img/cifar-10/test"
+	test_folder = "../img/cifar-10/test"
 	class_names = os.listdir(test_folder) # there are a folde for each class
 
 	# processing train folder
