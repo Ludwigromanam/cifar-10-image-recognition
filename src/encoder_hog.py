@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 def standardize(data):
 	data[0] = 0
 	mean = np.mean(data)
