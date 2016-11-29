@@ -23,14 +23,14 @@ def get_sample(num_samples, X_data, y_data):
 def mlp_1_layer(l1_act, layer_size):
 
 	# input placeholder
-	x = tf.placeholder(tf.float32, [None, 3072])
+	x = tf.placeholder(tf.float32, [None, 100])
 
 	# output placeholder
 	y_ = tf.placeholder(tf.float32, [None, 10])
 
 
 	# weights of the neurons in first layer
-	W1 = tf.Variable(tf.random_normal([3072, layer_size], stddev=0.35))
+	W1 = tf.Variable(tf.random_normal([100, layer_size], stddev=0.35))
 	b1 = tf.Variable(tf.random_normal([layer_size], stddev=0.35))
 
 	# weights of the neurons in second layer
@@ -116,7 +116,7 @@ tanh = tf.nn.tanh
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
-	mlp_3_layer(tf.nn.elu, 30, tf.nn.elu, 300, tf.nn.sigmoid, 30)
+	mlp_1_layer(tf.nn.sigmoid, 5)
 ]
 
 for x, y_, y_estimated in models:
