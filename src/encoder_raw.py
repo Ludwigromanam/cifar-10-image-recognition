@@ -9,13 +9,28 @@ def standardize(data):
 	std = np.std(data)
 	return (data - mean)/std
 
+def normalize(data):
+	data[0] = 0
+	return data / 255.0
+
+def add_position(arr):
+	for i, el in enumerate(arr):
+		arr[i] = el + i
+	return arr
 # create a feature vector concatenating each image
 def generate_vector(img_path):
 	img = cv2.imread(img_path)
 
 	# imagem raw
+	# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+	# feature_vec = standardize(img.flatten())
+
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-	feature_vec = standardize(img.flatten())
+	feature_vec = normalize(img.flatten())
+
+	# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+	# feature_vec = normalize(add_position(img.flatten()))
+	# feature_vec = standardize(add_position(img.flatten()))
 
 	# somando os canais
 	# r = img[:,:,0].flatten()

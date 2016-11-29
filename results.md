@@ -170,3 +170,95 @@ encoding com todos os pixels standartized. Usando elu/elu/sigmoid
 models = [mlp_3_layer(500, 700, 500)]
 encoding com todos os pixels standartized. Usando elu/elu/sigmoid
 10% (2000)
+
+
+mlp_3_layer_act(tf.nn.elu, 200, tf.nn.elu, 200, tf.nn.sigmoid, 200)
+encoding com todos os pixels standartized
+38% (10000)
+
+mlp_3_layer_act(tf.nn.elu, 30, tf.nn.elu, 300, tf.nn.sigmoid, 30)
+encoding com todos os pixels standartized
+35% (10000)
+
+mlp_3_layer_act(tf.nn.sigmoid, 300, tf.nn.sigmoid, 500, tf.nn.sigmoid, 300)
+encoding com todos os pixels standartized
+33% (10000)
+
+mlp_3_layer_act(tf.nn.softplus, 300, tf.nn.softplus, 300, tf.nn.sigmoid, 300)
+encoding com todos os pixels standartized
+39% (10000)
+
+mlp_3_layer_act(tf.nn.relu, 300, tf.nn.relu, 300, tf.nn.sigmoid, 300)
+encoding com todos os pixels standartized
+40% (10000)
+
+
+
+mlp_1_layer(300)
+encoding com todos os pixels normalizados. sigmoid
+37%/38% (2000)
+39% (10000)
+
+mlp_1_layer(30)
+encoding com todos os pixels normalizados. sigmoid
+35% (2000)
+
+mlp_1_layer(900)
+encoding com todos os pixels normalizados. sigmoid
+10% (2000)
+
+mlp_1_layer(2000)
+encoding com todos os pixels normalizados. sigmoid
+10% (2000)
+
+mlp_2_layer(300, 300)
+encoding com todos os pixels normalizados. elu, sigmoid
+31% (2000)
+
+mlp_3_layer_act(tf.nn.relu, 300, tf.nn.relu, 300, tf.nn.sigmoid, 300),
+encoding com todos os pixels normalizados
+10% (2000)
+
+mlp_3_layer_act(tf.nn.sigmoid, 300, tf.nn.sigmoid, 500, tf.nn.sigmoid, 300)
+encoding com todos os pixels normalizados
+36% (2000)
+
+mlp_3_layer_act(tf.nn.elu, 30, tf.nn.elu, 300, tf.nn.sigmoid, 30)
+encoding com todos os pixels normalizados
+36%/39% (2000)
+
+mlp_2_layer(300, 300)
+encoding com todos os pixels normalizados. sigmoid sigmoid
+38% (2000)
+
+mlp_3_layer_act(tf.nn.elu, 30, tf.nn.elu, 30, tf.nn.sigmoid, 30)
+encoding com todos os pixels normalizados.
+36% (2000)
+
+mlp_1_layer(elu, 300)
+encoding com todos os pixels normalizados.
+10% (2000)
+
+mlp_1_layer(tanh, 300),
+encoding com todos os pixels normalizados.
+10% (2000)
+
+mlp_1_layer(sigmoid, 300),
+encoding com todos os pixels posicionados e normalizados
+28% (2000)
+
+mlp_1_layer(sigmoid, 300),
+encoding com todos os pixels posicionados e standartizados
+23% (2000)
+
+mlp_3_layer(elu, 300, elu, 300, sigmoid, 300)
+encoding com todos os pixels posicionados e normalizados
+10% (2000)
+
+mlp_3_layer(sigmoid, 300, sigmoid, 300, sigmoid, 300)
+encoding com todos os pixels posicionados e normalizados
+28% (2000)
+
+mlp_3_layer(tf.nn.elu, 30, tf.nn.elu, 300, tf.nn.sigmoid, 30)
+encoding com todos os pixels normalizados.
+37%
