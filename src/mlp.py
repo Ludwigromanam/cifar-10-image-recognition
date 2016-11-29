@@ -1,7 +1,8 @@
-import encoder_sift as encoder
+import encoder_hog_scikit_image as encoder
 
 import numpy as np
 import tensorflow as tf
+
 
 # help function to sampling data
 def get_sample(num_samples, X_data, y_data):
@@ -23,14 +24,15 @@ def get_sample(num_samples, X_data, y_data):
 def mlp_1_layer(l1_act, layer_size):
 
 	# input placeholder
-	x = tf.placeholder(tf.float32, [None, 100])
+	# mudei pra 1024 pra caber o hog encode
+	x = tf.placeholder(tf.float32, [None, 1024])
 
 	# output placeholder
 	y_ = tf.placeholder(tf.float32, [None, 10])
 
 
 	# weights of the neurons in first layer
-	W1 = tf.Variable(tf.random_normal([100, layer_size], stddev=0.35))
+	W1 = tf.Variable(tf.random_normal([1024, layer_size], stddev=0.35))
 	b1 = tf.Variable(tf.random_normal([layer_size], stddev=0.35))
 
 	# weights of the neurons in second layer
@@ -116,7 +118,11 @@ tanh = tf.nn.tanh
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
-	mlp_1_layer(tf.nn.sigmoid, 5)
+	# mlp_1_layer(sigmoid, 5),
+    mlp_1_layer(elu, 5),
+    mlp_1_layer(relu, 5),
+    mlp_1_layer(tanh, 5),
+    mlp_1_layer(tf.nn.softplus, 5),
 ]
 
 for x, y_, y_estimated in models:

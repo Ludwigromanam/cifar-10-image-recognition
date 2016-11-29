@@ -262,3 +262,16 @@ encoding com todos os pixels posicionados e normalizados
 mlp_3_layer(tf.nn.elu, 30, tf.nn.elu, 300, tf.nn.sigmoid, 30)
 encoding com todos os pixels normalizados.
 37%
+
+
+HoG
+mlp_1_layer(tf.nn.sigmoid, 5)
+ecoding com pixels não normalizados 
+treinamento: 10000
+42,4%
+
+HoG
+mlp_1_layer(tf.nn.sigmoid, 5)
+ecoding com pixels normalizados 
+treinamento: 10000
+8,9%

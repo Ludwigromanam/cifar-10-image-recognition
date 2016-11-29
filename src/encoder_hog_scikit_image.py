@@ -1,44 +1,87 @@
-import matplotlib.pyplot as plt
-
+import os
 from skimage.feature import hog
 from skimage import data, color, exposure
 import numpy as np
 
+
 def standardize(data):
-	data[0] = 0
-	mean = np.mean(data)
-	std = np.std(data)
-	return (data - mean)/std
+    data[0] = 0
+    mean = np.mean(data)
+    std = np.std(data)
+    return (data - mean)/std
+
+
+def normalize(data):
+    data[0] = 0
+    return data / 255.0
+
 
 def generate_vector(img_path):
+    """Transforma a imagem em vetor, usando o HoG"""
 
-    # image = color.rgb2gray(data.astronaut())
-    # image = data.imread('../img/Lenna.png')
     image = data.imread(img_path)
     image = color.rgb2gray(image)
 
     fd, hog_image = hog(image, orientations=8, pixels_per_cell=(4, 4),
                         cells_per_block=(1, 1), visualise=True)
 
-    # fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4), sharex=True, sharey=True)
-    #
-    # ax1.axis('off')
-    # ax1.imshow(image, cmap=plt.cm.gray)
-    # ax1.set_title('Input image')
-    # ax1.set_adjustable('box-forced')
 
     # Rescale histogram for better display
     hog_image_rescaled = exposure.rescale_intensity(hog_image, in_range=(0, 0.02))
 
-    # ax2.axis('off')
-    # ax2.imshow(hog_image, cmap=plt.cm.gray)
-    # ax2.set_title('Histogram of Oriented Gradients')
-    # ax1.set_adjustable('box-forced')
-    # plt.show()
-    print len(hog_image_rescaled)
-    print len(hog_image_rescaled[0])
 
-    return  hog_image_rescaled
+    feature_vec = hog_image.flatten()
+    return feature_vec
+
+
+def encode():
+
+    test_folder = "../img/cifar-10/test"
+    class_names = os.listdir(test_folder) # there are a folde for each class
+
+    # processing train folder
+    print "PROCESSING TEST FOLDER: "
+    X = []
+    y = []
+    count = 0
+    for name in class_names:
+        files = os.listdir(test_folder+"/"+name)
+
+        # transform each file into a feature vector
+        for file_name in files:
+            vec = generate_vector(test_folder+"/"+name+"/"+file_name)
+            X.append(vec.tolist())
+
+            y_vec = [0] * len(class_names) # <<<<<<<<<<<<<< HOT ENCODING REPRESENTATION <<<<<
+            y_vec[class_names.index(name)] = 1
+            y.append(y_vec)
+
+            count += 1
+
+            if count % 1000 == 0:
+                print count, " images processed"
+
+
+    # randomizing positions
+    np.random.seed(42)
+    np.random.shuffle(X)
+    np.random.seed(42)
+    np.random.shuffle(y)
+
+
+    # spliting the dataset in thee groups
+    X_train = X[:8000]
+    y_train = y[:8000]
+
+    X_validation = X_test = X[8000: 9000]
+    y_validation = y_test = y[8000: 9000]
+
+    X_test = X[9000: ]
+    y_test = y[9000: ]
+
+    return X_train, y_train, X_validation, y_validation, X_test, y_test
+
+
 
 if __name__ == "__main__":
     generate_vector('../img/cifar-10/test/cat/alley_cat_s_000013.png')

@@ -8,6 +8,10 @@ def standardize(data):
 	std = np.std(data)
 	return (data - mean)/std
 
+def normalize(data):
+	data[0] = 0
+	return data / 255.0
+
 # create a feature vector concatenating each image
 def generate_vector(img_path):
 
