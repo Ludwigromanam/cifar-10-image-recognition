@@ -354,6 +354,32 @@ HoG
  },
  20000
  48%
+ 
+ HoG
+{
+    'func': mlp_1_layer,
+    'args': [elu, 300],
+    'title': 'mlp 1 layer com elu'
+ },
+ 1600
+ 48,89%
+ 
+  HoG
+{
+    'func': mlp_1_layer,
+    'args': [elu, 300],
+    'title': 'mlp 1 layer com elu'
+ },
+ 5200
+ 49,2%
+ 
+ {
+    'func': mlp_1_layer,
+    'args': [elu, 300],
+    'title': 'mlp 1 layer com elu'
+ },
+ 7500
+ 50,4%
 
 HoG
 {
@@ -395,14 +421,9 @@ mlp_3_layer(softplus, 5, softplus, 10, softplus, 10)
 ecoding com pixels não normalizados
 treinamento: 10000
 40,4%
-<<<<<<< HEAD
-||||||| merged common ancestors
->>>>>>> mudando graficos de lugar e add resultados
-=======
 
 HoG
 mlp_3_layer(softplus, 5, softplus, 20, softplus, 10)
 ecoding com pixels não normalizados 
 treinamento: 10000
 42,4%
->>>>>>> add resultados

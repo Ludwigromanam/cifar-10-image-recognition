@@ -133,8 +133,8 @@ models = [
     #  },
     {
         'func': mlp_1_layer,
-        'args': [ELU, 300],
-        'title': 'mlp 1 layer com elu'
+        'args': [ELU, 600],
+        'title': 'mlp 1 layer com elu 600 nos'
     },
     # {
     #     'func': mlp_1_layer,
@@ -227,7 +227,7 @@ for model in models:
     y_grafico = []
 
 
-    iteracoes = 30000
+    iteracoes = 60000
 
     melhores_acuracia = []
     for i in range(iteracoes):
@@ -240,10 +240,10 @@ for model in models:
         # print the accuracy result
         if i % 100 == 0:
             acuracia_atual = (sess.run(accuracy, feed_dict={x: X_validation, y_: y_validation}))
-            # x_grafico.append(i)
-            # y_grafico.append(acuracia_atual)
+            x_grafico.append(i)
+            y_grafico.append(acuracia_atual)
             print i, ": ", acuracia_atual
-            if acuracia_atual > 0.446:
+            if acuracia_atual > 0.499:
                 melhores_acuracia.append((i, acuracia_atual))
 
     print "\n\n\n"
