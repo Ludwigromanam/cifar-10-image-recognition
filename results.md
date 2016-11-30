@@ -326,3 +326,36 @@ mlp_1_layer(tf.nn.sigmoid, 5)
 ecoding com pixels normalizados
 treinamento: 10000
 8,9%
+
+HoG
+mlp_1_layer(elu, 5),
+ecoding com pixels não normalizados
+treinamento: 10000
+40,2%
+
+HoG
+mlp_1_layer(relu, 5),
+ecoding com pixels não normalizados
+treinamento: 10000
+37,6%
+
+treinamento: 9000
+41,6%
+
+HoG
+mlp_1_layer(tanh, 5),
+ecoding com pixels não normalizados
+treinamento: 10000
+41,2%
+
+treinamento: 8900
+42,8%
+
+treinamento: 5400
+43,7%
+
+HoG
+mlp_1_layer(tf.nn.softplus, 5)
+ecoding com pixels não normalizados
+treinamento: 7200
+44,2%
