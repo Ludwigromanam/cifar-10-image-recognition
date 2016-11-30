@@ -121,19 +121,31 @@ softplus = tf.nn.softplus
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
-    # mlp_1_layer(sigmoid, 5),
-    {
-        'func': mlp_1_layer,
-        'args': [elu, 5],
-        'title': 'mlp 1 layer com elu'
-     },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [elu, 5],
+    #     'title': 'mlp 1 layer com elu'
+    #  },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [sigmoid, 5],
+    #     'title': 'mlp 1 layer com sigmoid'
+    # },
     # {
     #     'func': mlp_1_layer,
     #     'args': [relu, 5],
     #     'title': 'mlp 1 layer com relu'
     #  },
-    # mlp_1_layer(tanh, 5),
-    # mlp_1_layer(tf.nn.softplus, 5),
+    {
+        'func': mlp_1_layer,
+        'args': [softplus, 5],
+        'title': 'mlp 1 layer com softplus'
+     },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [tanh, 5],
+    #     'title': 'mlp 1 layer com tanh'
+    # },
 ]
 
 # for ret_net, title in models:
