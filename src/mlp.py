@@ -55,6 +55,8 @@ def mlp_2_layer(l1_act, l1_size, l2_act, l2_size):
     # input placeholder
     x = tf.placeholder(tf.float32, [None, INPUT_SIZE])
 
+
+
     # output placeholder
     y_ = tf.placeholder(tf.float32, [None, 10])
 
@@ -137,6 +139,36 @@ models = [
     #     'args': [relu, 5],
     #     'title': 'mlp 1 layer com relu'
     #  },
+    {
+        'func': mlp_1_layer,
+        'args': [softplus, 5],
+        'title': 'mlp 1 layer com softplus'
+     },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [tanh, 5],
+    #     'title': 'mlp 1 layer com tanh'
+    # },
+    # {
+    #     'func': mlp_2_layer,
+    #     'args': [softplus, 5, softplus, 10],
+    #     'title': 'mlp 2 layer com softplus'
+    #  },
+    {
+        'func': mlp_3_layer,
+        'args': [softplus, 5, softplus, 10, softplus, 10],
+        'title': 'mlp 3 layer com softplus'
+     },
+    # {
+    #     'func': mlp_2_layer,
+    #     'args': [softplus, 5],
+    #     'title': 'mlp 1 layer com softplus'
+    #  },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [tanh, 5],
+    #     'title': 'mlp 1 layer com tanh'
+    # },
 ]
 
 # for ret_net, title in models:
@@ -172,7 +204,11 @@ for model in models:
     x_grafico = []
     y_grafico = []
 
-    iteracoes = 20000
+
+
+    iteracoes = 200 # trainning 1000 times
+    melhores_acuracia = []
+
     for i in range(iteracoes):
         # randomizing positions
         X_sample, y_sample = get_sample(num_batch_trainning, X_train, y_train)
@@ -186,10 +222,13 @@ for model in models:
             x_grafico.append(i)
             y_grafico.append(acuracia_atual)
             print i, ": ", acuracia_atual
+            if acuracia_atual > 0.446:
+                melhores_acuracia.append((i, acuracia_atual))
 
     print "\n\n\n"
     print "TEST RESULT: ", (sess.run(accuracy, feed_dict={x: X_test, y_: y_test}))
-    plot_name = "../graficos/{}-{}.png".format(title, iteracoes)
+    print "Melhores acuracias: {}".format(melhores_acuracia)
+    plot_name = "../graficos/hog/{}-{}.png".format(title, iteracoes)
     plt.plot(x_grafico, y_grafico)
     plt.title(title)
     plt.xlabel("Numero de iteracoes")

@@ -359,3 +359,21 @@ mlp_1_layer(tf.nn.softplus, 5)
 ecoding com pixels não normalizados
 treinamento: 7200
 44,2%
+
+HoG
+mlp_1_layer(tf.nn.softplus, 5)
+ecoding com pixels não normalizados 
+treinamento: 19100
+44,4%
+
+HoG
+mlp_2_layer(softplus, 5, softplus, 10)
+ecoding com pixels não normalizados 
+treinamento: 7200
+44,6%
+
+HoG
+mlp_2_layer(softplus, 5, softplus, 10)
+ecoding com pixels não normalizados 
+treinamento: 7600
+44,9%
