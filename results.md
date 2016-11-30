@@ -376,4 +376,16 @@ HoG
 mlp_2_layer(softplus, 5, softplus, 10)
 ecoding com pixels não normalizados 
 treinamento: 7600
+<<<<<<< HEAD
 44,9%
+||||||| merged common ancestors
+44,9%
+=======
+44,9%
+
+HoG
+mlp_3_layer(softplus, 5, softplus, 10, softplus, 10)
+ecoding com pixels não normalizados 
+treinamento: 10000
+40,4%
+>>>>>>> mudando graficos de lugar e add resultados

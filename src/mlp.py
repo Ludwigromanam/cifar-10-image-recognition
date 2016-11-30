@@ -84,6 +84,7 @@ def mlp_2_layer(l1_act, l1_size, l2_act, l2_size):
 def mlp_3_layer(l1_act, l1_size, l2_act, l2_size, l3_act, l3_size):
 
     # input placeholder
+
     x = tf.placeholder(tf.float32, [None, INPUT_SIZE])
 
     # output placeholder
@@ -91,6 +92,7 @@ def mlp_3_layer(l1_act, l1_size, l2_act, l2_size, l3_act, l3_size):
 
 
     # weights of the neurons in first layer
+
     W1 = tf.Variable(tf.random_normal([INPUT_SIZE, l1_size], stddev=0.35))
     b1 = tf.Variable(tf.random_normal([l1_size], stddev=0.35))
 
