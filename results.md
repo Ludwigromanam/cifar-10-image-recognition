@@ -263,15 +263,66 @@ mlp_3_layer(tf.nn.elu, 30, tf.nn.elu, 300, tf.nn.sigmoid, 30)
 encoding com todos os pixels normalizados.
 37%
 
+SIFT (10 clusters, 10000 iterations)
+mlp_1_layer(sigmoid, 5), # 22%
+mlp_1_layer(elu, 5), # 24%
+mlp_1_layer(relu, 5), # 22%
+mlp_1_layer(tanh, 5), # 20%
+mlp_1_layer(tf.nn.softplus, 5), # 24%
+mlp_1_layer(sigmoid, 5), # 23%
+mlp_1_layer(sigmoid, 10), # 24%
+mlp_1_layer(sigmoid, 15), # 23%
+mlp_1_layer(sigmoid, 20), # 23%
+mlp_1_layer(sigmoid, 30), # 24%
+mlp_1_layer(sigmoid, 100), # 20
+mlp_2_layer(sigmoid, 5, sigmoid, 5), # 21%
+mlp_2_layer(elu, 5, sigmoid, 5), # 25%
+mlp_2_layer(sigmoid, 5, elu, 5), # 24%
+mlp_2_layer(elu, 5, elu, 5), # 22%
+mlp_3_layer(sigmoid, 5, sigmoid, 5, sigmoid, 5), # 21%
+mlp_3_layer(sigmoid, 5, sigmoid, 5, elu, 5), # 24%
+mlp_3_layer(sigmoid, 5, elu, 5, sigmoid, 5), # 22%
+mlp_3_layer(sigmoid, 5, elu, 5, elu, 5), # 22%
+mlp_3_layer(elu, 5, sigmoid, 5, sigmoid, 5), # 24%
+mlp_3_layer(elu, 5, sigmoid, 5, elu, 5), # 22%
+mlp_3_layer(elu, 5, elu, 5, sigmoid, 5), # 21%
+mlp_3_layer(elu, 5, elu, 5, elu, 5), # 25%
+
+SIFT (100 clusters, 10000 iterations)
+mlp_1_layer(sigmoid, 5), # 24%
+mlp_1_layer(elu, 5), # 25%
+mlp_1_layer(relu, 5), # 24%
+mlp_1_layer(tanh, 5), # 25%
+mlp_1_layer(tf.nn.softplus, 5), # 26%
+
+mlp_1_layer(sigmoid, 5), # 23%
+mlp_1_layer(sigmoid, 10), # 24%
+mlp_1_layer(sigmoid, 15), # 23%
+mlp_1_layer(sigmoid, 20), # 23%
+mlp_1_layer(sigmoid, 30), # 21%
+mlp_1_layer(sigmoid, 100), # 21%
+
+mlp_2_layer(sigmoid, 5, sigmoid, 5), # 24%
+mlp_2_layer(elu, 5, sigmoid, 5), # 22%
+mlp_2_layer(sigmoid, 5, elu, 5), # 24%
+mlp_2_layer(elu, 5, elu, 5), # 24%
+mlp_3_layer(sigmoid, 5, sigmoid, 5, sigmoid, 5), # 21%
+mlp_3_layer(sigmoid, 5, sigmoid, 5, elu, 5), # 25%
+mlp_3_layer(sigmoid, 5, elu, 5, sigmoid, 5), # 22%
+mlp_3_layer(sigmoid, 5, elu, 5, elu, 5), # 25%
+mlp_3_layer(elu, 5, sigmoid, 5, sigmoid, 5), # 20%
+mlp_3_layer(elu, 5, sigmoid, 5, elu, 5), # 23%
+mlp_3_layer(elu, 5, elu, 5, sigmoid, 5), # 24%
+mlp_3_layer(elu, 5, elu, 5, elu, 5), # 24%,
 
 HoG
 mlp_1_layer(tf.nn.sigmoid, 5)
-ecoding com pixels não normalizados 
+ecoding com pixels não normalizados
 treinamento: 10000
 42,4%
 
 HoG
 mlp_1_layer(tf.nn.sigmoid, 5)
-ecoding com pixels normalizados 
+ecoding com pixels normalizados
 treinamento: 10000
 8,9%

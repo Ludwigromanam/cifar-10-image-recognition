@@ -1,4 +1,4 @@
-import encoder_hog_scikit_image as encoder
+import encoder_sift as encoder
 
 import numpy as np
 import tensorflow as tf
@@ -21,18 +21,20 @@ def get_sample(num_samples, X_data, y_data):
 
 ######################## creating the model architecture #######################################
 
+INPUT_SIZE = 100
+
 def mlp_1_layer(l1_act, layer_size):
 
 	# input placeholder
 	# mudei pra 1024 pra caber o hog encode
-	x = tf.placeholder(tf.float32, [None, 1024])
+	x = tf.placeholder(tf.float32, [None, INPUT_SIZE])
 
 	# output placeholder
 	y_ = tf.placeholder(tf.float32, [None, 10])
 
 
 	# weights of the neurons in first layer
-	W1 = tf.Variable(tf.random_normal([1024, layer_size], stddev=0.35))
+	W1 = tf.Variable(tf.random_normal([INPUT_SIZE, layer_size], stddev=0.35))
 	b1 = tf.Variable(tf.random_normal([layer_size], stddev=0.35))
 
 	# weights of the neurons in second layer
@@ -50,14 +52,14 @@ def mlp_1_layer(l1_act, layer_size):
 def mlp_2_layer(l1_act, l1_size, l2_act, l2_size):
 
 	# input placeholder
-	x = tf.placeholder(tf.float32, [None, 3072])
+	x = tf.placeholder(tf.float32, [None, INPUT_SIZE])
 
 	# output placeholder
 	y_ = tf.placeholder(tf.float32, [None, 10])
 
 
 	# weights of the neurons in first layer
-	W1 = tf.Variable(tf.random_normal([3072, l1_size], stddev=0.35))
+	W1 = tf.Variable(tf.random_normal([INPUT_SIZE, l1_size], stddev=0.35))
 	b1 = tf.Variable(tf.random_normal([l1_size], stddev=0.35))
 
 	# weights of the neurons in second layer
@@ -79,14 +81,14 @@ def mlp_2_layer(l1_act, l1_size, l2_act, l2_size):
 def mlp_3_layer(l1_act, l1_size, l2_act, l2_size, l3_act, l3_size):
 
 	# input placeholder
-	x = tf.placeholder(tf.float32, [None, 10])
+	x = tf.placeholder(tf.float32, [None, INPUT_SIZE])
 
 	# output placeholder
 	y_ = tf.placeholder(tf.float32, [None, 10])
 
 
 	# weights of the neurons in first layer
-	W1 = tf.Variable(tf.random_normal([10, l1_size], stddev=0.35))
+	W1 = tf.Variable(tf.random_normal([INPUT_SIZE, l1_size], stddev=0.35))
 	b1 = tf.Variable(tf.random_normal([l1_size], stddev=0.35))
 
 	# weights of the neurons in second layer
@@ -114,15 +116,36 @@ sigmoid = tf.nn.sigmoid
 elu = tf.nn.elu
 relu = tf.nn.relu
 tanh = tf.nn.tanh
+softplus = tf.nn.softplus
 
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
-	# mlp_1_layer(sigmoid, 5),
-    mlp_1_layer(elu, 5),
-    mlp_1_layer(relu, 5),
-    mlp_1_layer(tanh, 5),
-    mlp_1_layer(tf.nn.softplus, 5),
+	# mlp_1_layer(sigmoid, 5), # 24%
+    # mlp_1_layer(elu, 5), # 25%
+    # mlp_1_layer(relu, 5), # 24%
+    # mlp_1_layer(tanh, 5), # 25%
+    # mlp_1_layer(tf.nn.softplus, 5), # 26%
+	#
+	# mlp_1_layer(sigmoid, 5), # 23%
+	# mlp_1_layer(sigmoid, 10), # 24%
+	# mlp_1_layer(sigmoid, 15), # 23%
+	# mlp_1_layer(sigmoid, 20), # 23%
+	# mlp_1_layer(sigmoid, 30), # 21%
+	# mlp_1_layer(sigmoid, 100), # 21%
+	#
+	# mlp_2_layer(sigmoid, 5, sigmoid, 5), # 24%
+	# mlp_2_layer(elu, 5, sigmoid, 5), # 22%
+	# mlp_2_layer(sigmoid, 5, elu, 5), # 24%
+	# mlp_2_layer(elu, 5, elu, 5), # 24%
+	# mlp_3_layer(sigmoid, 5, sigmoid, 5, sigmoid, 5), # 21%
+	# mlp_3_layer(sigmoid, 5, sigmoid, 5, elu, 5), # 25%
+	# mlp_3_layer(sigmoid, 5, elu, 5, sigmoid, 5), # 22%
+	# mlp_3_layer(sigmoid, 5, elu, 5, elu, 5), # 25%
+	# mlp_3_layer(elu, 5, sigmoid, 5, sigmoid, 5), # 20%
+	# mlp_3_layer(elu, 5, sigmoid, 5, elu, 5), # 23%
+	# mlp_3_layer(elu, 5, elu, 5, sigmoid, 5), # 24%
+	# mlp_3_layer(elu, 5, elu, 5, elu, 5), # 24%,
 ]
 
 for x, y_, y_estimated in models:
@@ -159,8 +182,8 @@ for x, y_, y_estimated in models:
 		sess.run(train_step, feed_dict={x: X_sample, y_:  y_sample})
 
 		# print the accuracy result
-		if i % 100 == 0:
-			print i, ": ", (sess.run(accuracy, feed_dict={x: X_validation, y_: y_validation}))
+		# if i % 100 == 0:
+		# 	print i, ": ", (sess.run(accuracy, feed_dict={x: X_validation, y_: y_validation}))
 
 	print "\n\n\n"
 	print "TEST RESULT: ", (sess.run(accuracy, feed_dict={x: X_test, y_: y_test}))
