@@ -1,5 +1,5 @@
 import encoder_hog_scikit_image as encoder
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 import numpy as np
 import tensorflow as tf
@@ -23,6 +23,11 @@ def get_sample(num_samples, X_data, y_data):
 ######################## creating the model architecture #######################################
 
 INPUT_SIZE = 1024
+SIGMOID = tf.nn.sigmoid
+ELU = tf.nn.elu
+RELU = tf.nn.relu
+TANH = tf.nn.tanh
+SOFTPLUS = tf.nn.softplus
 
 def mlp_1_layer(l1_act, layer_size):
 
@@ -117,11 +122,6 @@ def mlp_3_layer(l1_act, l1_size, l2_act, l2_size, l3_act, l3_size):
 
     return x, y_, y_estimated
 
-sigmoid = tf.nn.sigmoid
-elu = tf.nn.elu
-relu = tf.nn.relu
-tanh = tf.nn.tanh
-softplus = tf.nn.softplus
 
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
@@ -133,8 +133,8 @@ models = [
     #  },
     {
         'func': mlp_1_layer,
-        'args': [elu, 300],
-        'title': 'mlp 1 layer com sigmoid'
+        'args': [ELU, 300],
+        'title': 'mlp 1 layer com elu'
     },
     # {
     #     'func': mlp_1_layer,
@@ -160,6 +160,26 @@ models = [
     #     'func': mlp_3_layer,
     #     'args': [softplus, 5, softplus, 10, softplus, 10],
     #     'title': 'mlp 3 layer com softplus'
+    #  },
+    # {
+    #     'func': mlp_2_layer,
+    #     'args': [softplus, 5, softplus, 10],
+    #     'title': 'mlp 2 layer com softplus'
+    #  },
+    # {
+    #     'func': mlp_3_layer,
+    #     'args': [softplus, 5, softplus, 10, softplus, 10],
+    #     'title': 'mlp 3 layer com softplus'
+    #  },
+    # {
+    #     'func': mlp_2_layer,
+    #     'args': [SOFTPLUS, 5, SOFTPLUS, 10],
+    #     'title': 'mlp 2 layer com softplus 4x4'
+    #  },
+    # {
+    #     'func': mlp_3_layer,
+    #     'args': [softplus, 5, softplus, 20, softplus, 10],
+    #     'title': 'mlp 3 layer com softplus 20 hidden layer'
     #  },
     # {
     #     'func': mlp_2_layer,
@@ -206,7 +226,9 @@ for model in models:
     x_grafico = []
     y_grafico = []
 
+
     iteracoes = 30000
+
     melhores_acuracia = []
     for i in range(iteracoes):
         # randomizing positions
@@ -227,10 +249,10 @@ for model in models:
     print "\n\n\n"
     print "TEST RESULT: ", (sess.run(accuracy, feed_dict={x: X_test, y_: y_test}))
     print "Melhores acuracias: {}".format(melhores_acuracia)
-    # plot_name = "../graficos/hog/{}-{}.png".format(title, iteracoes)
-    # plt.plot(x_grafico, y_grafico)
-    # plt.title(title)
-    # plt.xlabel("Numero de iteracoes")
-    # plt.ylabel("Acuracia")
-    # plt.savefig(plot_name)
-    # plt.show()
+    plot_name = "../graficos/hog/{}-{}.png".format(title, iteracoes)
+    plt.plot(x_grafico, y_grafico)
+    plt.title(title)
+    plt.xlabel("Numero de iteracoes")
+    plt.ylabel("Acuracia")
+    plt.savefig(plot_name)
+    plt.show()

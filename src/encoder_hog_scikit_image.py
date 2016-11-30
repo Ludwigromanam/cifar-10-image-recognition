@@ -4,18 +4,6 @@ from skimage import data, color, exposure
 import numpy as np
 
 
-def standardize(data):
-    data[0] = 0
-    mean = np.mean(data)
-    std = np.std(data)
-    return (data - mean)/std
-
-
-def normalize(data):
-    data[0] = 0
-    return data / 255.0
-
-
 def generate_vector(img_path):
     """Transforma a imagem em vetor, usando o HoG"""
 
