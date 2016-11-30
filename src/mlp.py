@@ -133,8 +133,8 @@ models = [
     #  },
     {
         'func': mlp_1_layer,
-        'args': [ELU, 600],
-        'title': 'mlp 1 layer com elu 600 nos'
+        'args': [ELU, 300],
+        'title': 'mlp 1 layer com elu 300 nos'
     },
     # {
     #     'func': mlp_1_layer,
