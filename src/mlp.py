@@ -180,7 +180,8 @@ for model in models:
     num_batch_trainning = 500
     x_grafico = []
     y_grafico = []
-    for i in range(1000): # trainning 1000 times
+    iteracoes = 20000 # trainning 1000 times
+    for i in range(iteracoes):
         # randomizing positions
         X_sample, y_sample = get_sample(num_batch_trainning, X_train, y_train)
 
@@ -196,7 +197,7 @@ for model in models:
 
     print "\n\n\n"
     print "TEST RESULT: ", (sess.run(accuracy, feed_dict={x: X_test, y_: y_test}))
-    plot_name = "../graficos/{}.png".format(title)
+    plot_name = "../graficos/{}-{}.png".format(title, iteracoes)
     plt.plot(x_grafico, y_grafico)
     plt.title(title)
     plt.xlabel("Numero de iteracoes")
