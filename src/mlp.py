@@ -122,11 +122,16 @@ softplus = tf.nn.softplus
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
-    {
-        'func': mlp_1_layer,
-        'args': [elu, 5],
-        'title': 'mlp 1 layer com elu'
-     },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [elu, 5],
+    #     'title': 'mlp 1 layer com elu'
+    #  },
+    # {
+    #     'func': mlp_1_layer,
+    #     'args': [sigmoid, 5],
+    #     'title': 'mlp 1 layer com sigmoid'
+    # },
     # {
     #     'func': mlp_1_layer,
     #     'args': [relu, 5],
@@ -166,7 +171,9 @@ for model in models:
     num_batch_trainning = 500
     x_grafico = []
     y_grafico = []
-    for i in range(10000): # trainning 1000 times
+
+    iteracoes = 20000
+    for i in range(iteracoes):
         # randomizing positions
         X_sample, y_sample = get_sample(num_batch_trainning, X_train, y_train)
 
@@ -182,8 +189,10 @@ for model in models:
 
     print "\n\n\n"
     print "TEST RESULT: ", (sess.run(accuracy, feed_dict={x: X_test, y_: y_test}))
-    plot_name = "../graficos/{}.png".format(title)
+    plot_name = "../graficos/{}-{}.png".format(title, iteracoes)
     plt.plot(x_grafico, y_grafico)
     plt.title(title)
+    plt.xlabel("Numero de iteracoes")
+    plt.ylabel("Acuracia")
     plt.savefig(plot_name)
     plt.show()
