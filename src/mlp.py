@@ -187,5 +187,7 @@ for model in models:
     plot_name = "../graficos/{}.png".format(title)
     plt.plot(x_grafico, y_grafico)
     plt.title(title)
+    plt.xlabel("Numero de iteracoes")
+    plt.ylabel("Acuracia")
     plt.savefig(plot_name)
     plt.show()
