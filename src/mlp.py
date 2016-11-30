@@ -1,5 +1,5 @@
 import encoder_hog_scikit_image as encoder
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 import numpy as np
 import tensorflow as tf
@@ -123,15 +123,15 @@ X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
     # {
-    #     'func': mlp_1_layer,
-    #     'args': [elu, 5],
+    #     'func': mlp_3_layer,
+    #     'args': [tanh, 300, tanh, 300, sigmoid, 300],
     #     'title': 'mlp 1 layer com elu'
     #  },
-    # {
-    #     'func': mlp_1_layer,
-    #     'args': [sigmoid, 5],
-    #     'title': 'mlp 1 layer com sigmoid'
-    # },
+    {
+        'func': mlp_1_layer,
+        'args': [elu, 500],
+        'title': 'mlp 1 layer com sigmoid'
+    },
     # {
     #     'func': mlp_1_layer,
     #     'args': [relu, 5],
@@ -172,7 +172,7 @@ for model in models:
     x_grafico = []
     y_grafico = []
 
-    iteracoes = 20000
+    iteracoes = 30000
     for i in range(iteracoes):
         # randomizing positions
         X_sample, y_sample = get_sample(num_batch_trainning, X_train, y_train)
@@ -183,16 +183,16 @@ for model in models:
         # print the accuracy result
         if i % 100 == 0:
             acuracia_atual = (sess.run(accuracy, feed_dict={x: X_validation, y_: y_validation}))
-            x_grafico.append(i)
-            y_grafico.append(acuracia_atual)
+            # x_grafico.append(i)
+            # y_grafico.append(acuracia_atual)
             print i, ": ", acuracia_atual
 
     print "\n\n\n"
     print "TEST RESULT: ", (sess.run(accuracy, feed_dict={x: X_test, y_: y_test}))
-    plot_name = "../graficos/{}-{}.png".format(title, iteracoes)
-    plt.plot(x_grafico, y_grafico)
-    plt.title(title)
-    plt.xlabel("Numero de iteracoes")
-    plt.ylabel("Acuracia")
-    plt.savefig(plot_name)
-    plt.show()
+    # plot_name = "../graficos/{}-{}.png".format(title, iteracoes)
+    # plt.plot(x_grafico, y_grafico)
+    # plt.title(title)
+    # plt.xlabel("Numero de iteracoes")
+    # plt.ylabel("Acuracia")
+    # plt.savefig(plot_name)
+    # plt.show()
