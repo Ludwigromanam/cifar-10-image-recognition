@@ -1,7 +1,5 @@
 Esse arquivo contém os resultados que obtivemos em todos os testes que foram feitos.
 
-Os melhores resultados estarão em destaque.
-
 A não ser quando notado, os resultado foram obtidos com 10.000 iterações e todos os layers são softmax
 
 # HISTOGRAMA
