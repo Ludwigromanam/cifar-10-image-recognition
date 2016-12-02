@@ -64,19 +64,19 @@ A não ser quando notado, os resultado foram obtidos com 10.000 iterações e to
 1 layer: (30)
 25%
 
-3 layers:(300, 700, 300)
+3 layers: (300, 700, 300)
 25% (2000 iterações)
 
-3 layers:(700, 500, 300)
+3 layers: (700, 500, 300)
 27% (2000 iterações)
 
-3 layers:(900, 700, 500)
+3 layers: (900, 700, 500)
 27% (2000 iterações)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 27% (2000 iterações)
 
-3 layers:(300, 500, 700)
+3 layers: (300, 500, 700)
 10% (2000 iterações)
 
 # RAW (standardize)
@@ -116,119 +116,119 @@ Usando sigmoid nos layers internos
 Usando sigmoid nos layers internos
 10%
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando sigmoid nos layers internos
 32% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando sigmoid/relu/sigmoid
 30% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando relu/relu/sigmoid
 35% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando elu/elu/sigmoid
 38% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando softplus/softplus/sigmoid
 36% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando elu/elu/tanh
 10% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando tanh/tanh/tanh
 26% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando tanh/tanh/sigmoid
 27% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando relu6/relu6/sigmoid
 26% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando relu/relu/relu
 10% (2000)
 
-3 layers:(300, 300, 300)
+3 layers: (300, 300, 300)
 Usando relu6/relu6/relu6
 10% (2000)
 
-3 layers:(300, 500, 300)
+3 layers: (300, 500, 300)
 Usando sigmoid nos layers internos
 34% (2000)
 
-3 layers:(300, 700, 300)
+3 layers: (300, 700, 300)
 Usando sigmoid nos layers internos
 31% (2000)
 
-3 layers:(900, 700, 500)
+3 layers: (900, 700, 500)
 Usando elu/elu/sigmoid
 10% (2000)
 
-3 layers:(30, 300, 30)
+3 layers: (30, 300, 30)
 Usando elu/elu/sigmoid
 35% (2000)
 
-3 layers:(700, 700, 700)
+3 layers: (700, 700, 700)
 Usando elu/elu/sigmoid
 10% (2000)
 
-3 layers:(500, 500, 500)
+3 layers: (500, 500, 500)
 Usando elu/elu/sigmoid
 26% (2000)
 
-3 layers:(200, 200, 200)
+3 layers: (200, 200, 200)
 Usando elu/elu/sigmoid
 37% (2000) 40% max
 
-3 layers:(150, 150, 150)
+3 layers: (150, 150, 150)
 Usando elu/elu/sigmoid
 36% (2000) 38% max
 
-3 layers:(100, 100, 100)
+3 layers: (100, 100, 100)
 Usando elu/elu/sigmoid
 36% (2000)
 
-3 layers:(50, 50, 50)
+3 layers: (50, 50, 50)
 Usando elu/elu/sigmoid
 30% (2000)
 
-3 layers:(30, 30, 30)
+3 layers: (30, 30, 30)
 Usando elu/elu/sigmoid
 32% (2000)
 
-3 layers:(10, 10, 10)
+3 layers: (10, 10, 10)
 Usando elu/elu/sigmoid
 28% (2000)
 
-3 layers:(500, 700, 500)
+3 layers: (500, 700, 500)
 Usando elu/elu/sigmoid
 10% (2000)
 
-3 layers:(elu, 200, elu, 200, sigmoid, 200)
+3 layers: (200,200,200)
 Usando elu/elu/sigmoid
 38%
 
-3 layers:(elu, 30, elu, 300, sigmoid, 30)
+3 layers: (30,300,30)
 Usando elu/elu/sigmoid
 35%
 
-3 layers:(sigmoid, 300, sigmoid, 500, sigmoid, 300)
+3 layers: (300,500,300)
 Usando sigmoid nos layers internos
 33%
 
-3 layers:(softplus, 300, softplus, 300, sigmoid, 300)
+3 layers: (300,300,300)
 Usando softplus/softplus/sigmoid
 39%
 
-3 layers:(relu, 300, relu, 300, sigmoid, 300)
+3 layers: (300,300,300)
 Usando relu/relu/sigmoid
 40%
 
@@ -255,15 +255,15 @@ Usando sigmoid nos layers internos
 Usando elu, sigmoid nos layers internos
 31% (2000)
 
-3 layers:(relu, 300, relu, 300, sigmoid, 300)
+3 layers: (300,300,300)
 Usando relu/relu/sigmoid
 10% (2000)
 
-3 layers:(sigmoid, 300, sigmoid, 500, sigmoid, 300)
+3 layers: (300,500,300)
 Usando sigmoid nos layers internos
 36% (2000)
 
-3 layers:(elu, 30, elu, 300, sigmoid, 30)
+3 layers: (30,300,30)
 Usando elu/elu/sigmoid
 39% (2000)
 
@@ -271,7 +271,7 @@ Usando elu/elu/sigmoid
 Usando sigmoid/sigmoid
 38% (2000)
 
-3 layers:(elu, 30, elu, 30, sigmoid, 30)
+3 layers: (elu, 30, elu, 30, sigmoid, 30)
 36% (2000)
 
 1 layer: (elu, 300)
@@ -283,60 +283,60 @@ Usando sigmoid/sigmoid
 # SIFT
 
 ## 10 clusters
-1 layer: (sigmoid, 5),                         # 22%
-1 layer: (elu, 5),                             # 24%
-1 layer: (relu, 5),                            # 22%
-1 layer: (tanh, 5),                            # 20%
-1 layer: (softplus, 5),                        # 24%
+1 layer: (sigmoid, 5)                          # 22%
+1 layer: (elu, 5)                              # 24%
+1 layer: (relu, 5)                             # 22%
+1 layer: (tanh, 5)                             # 20%
+1 layer: (softplus, 5)                         # 24%
 
-1 layer: (sigmoid, 5),                         # 23%
-1 layer: (sigmoid, 10),                        # 24%
-1 layer: (sigmoid, 15),                        # 23%
-1 layer: (sigmoid, 20),                        # 23%
-1 layer: (sigmoid, 30),                        # 24%
-1 layer: (sigmoid, 100),                       # 20
+1 layer: (sigmoid, 5)                          # 23%
+1 layer: (sigmoid, 10)                         # 24%
+1 layer: (sigmoid, 15)                         # 23%
+1 layer: (sigmoid, 20)                         # 23%
+1 layer: (sigmoid, 30)                         # 24%
+1 layer: (sigmoid, 100)                        # 20
 
-2 layers: (sigmoid, 5, sigmoid, 5),             # 21%
-2 layers: (elu, 5, sigmoid, 5),                 # 25%
-2 layers: (sigmoid, 5, elu, 5),                 # 24%
-2 layers: (elu, 5, elu, 5),                     # 22%
+2 layers: (sigmoid, 5, sigmoid, 5)              # 21%
+2 layers: (elu, 5, sigmoid, 5)                  # 25%
+2 layers: (sigmoid, 5, elu, 5)                  # 24%
+2 layers: (elu, 5, elu, 5)                      # 22%
 
-3 layers:(sigmoid, 5, sigmoid, 5, sigmoid, 5), # 21%
-3 layers:(sigmoid, 5, sigmoid, 5, elu, 5),     # 24%
-3 layers:(sigmoid, 5, elu, 5, sigmoid, 5),     # 22%
-3 layers:(sigmoid, 5, elu, 5, elu, 5),         # 22%
-3 layers:(elu, 5, sigmoid, 5, sigmoid, 5),     # 24%
-3 layers:(elu, 5, sigmoid, 5, elu, 5),         # 22%
-3 layers:(elu, 5, elu, 5, sigmoid, 5),         # 21%
-3 layers:(elu, 5, elu, 5, elu, 5),             # 25%
+3 layers: (sigmoid, 5, sigmoid, 5, sigmoid, 5), # 21%
+3 layers: (sigmoid, 5, sigmoid, 5, elu, 5)      # 24%
+3 layers: (sigmoid, 5, elu, 5, sigmoid, 5)      # 22%
+3 layers: (sigmoid, 5, elu, 5, elu, 5)          # 22%
+3 layers: (elu, 5, sigmoid, 5, sigmoid, 5)      # 24%
+3 layers: (elu, 5, sigmoid, 5, elu, 5)          # 22%
+3 layers: (elu, 5, elu, 5, sigmoid, 5)          # 21%
+3 layers: (elu, 5, elu, 5, elu, 5)              # 25%
 
 ## 100 clusters
-1 layer: (sigmoid, 5),                         # 24%
-1 layer: (elu, 5),                             # 25%
-1 layer: (relu, 5),                            # 24%
-1 layer: (tanh, 5),                            # 25%
-1 layer: (softplus, 5),                  # 26%
+1 layer: (sigmoid, 5)                          # 24%
+1 layer: (elu, 5)                              # 25%
+1 layer: (relu, 5)                             # 24%
+1 layer: (tanh, 5)                             # 25%
+1 layer: (softplus, 5)                         # 26%
 
-1 layer: (sigmoid, 5),                         # 23%
-1 layer: (sigmoid, 10),                        # 24%
-1 layer: (sigmoid, 15),                        # 23%
-1 layer: (sigmoid, 20),                        # 23%
-1 layer: (sigmoid, 30),                        # 21%
-1 layer: (sigmoid, 100),                       # 21%
+1 layer: (sigmoid, 5)                          # 23%
+1 layer: (sigmoid, 10)                         # 24%
+1 layer: (sigmoid, 15)                         # 23%
+1 layer: (sigmoid, 20)                         # 23%
+1 layer: (sigmoid, 30)                         # 21%
+1 layer: (sigmoid, 100)                        # 21%
 
-2 layers: (sigmoid, 5, sigmoid, 5),             # 24%
-2 layers: (elu, 5, sigmoid, 5),                 # 22%
-2 layers: (sigmoid, 5, elu, 5),                 # 24%
-2 layers: (elu, 5, elu, 5),                     # 24%
+2 layers: (sigmoid, 5, sigmoid, 5)              # 24%
+2 layers: (elu, 5, sigmoid, 5)                  # 22%
+2 layers: (sigmoid, 5, elu, 5)                  # 24%
+2 layers: (elu, 5, elu, 5)                      # 24%
 
-3 layers:(sigmoid, 5, sigmoid, 5, sigmoid, 5)  # 21%
-3 layers:(sigmoid, 5, sigmoid, 5, elu, 5)      # 25%
-3 layers:(sigmoid, 5, elu, 5, sigmoid, 5)      # 22%
-3 layers:(sigmoid, 5, elu, 5, elu, 5)          # 25%
-3 layers:(elu, 5, sigmoid, 5, sigmoid, 5)      # 20%
-3 layers:(elu, 5, sigmoid, 5, elu, 5)          # 23%
-3 layers:(elu, 5, elu, 5, sigmoid, 5)          # 24%
-3 layers:(elu, 5, elu, 5, elu, 5)              # 24%
+3 layers: (sigmoid, 5, sigmoid, 5, sigmoid, 5)  # 21%
+3 layers: (sigmoid, 5, sigmoid, 5, elu, 5)      # 25%
+3 layers: (sigmoid, 5, elu, 5, sigmoid, 5)      # 22%
+3 layers: (sigmoid, 5, elu, 5, elu, 5)          # 25%
+3 layers: (elu, 5, sigmoid, 5, sigmoid, 5)      # 20%
+3 layers: (elu, 5, sigmoid, 5, elu, 5)          # 23%
+3 layers: (elu, 5, elu, 5, sigmoid, 5)          # 24%
+3 layers: (elu, 5, elu, 5, elu, 5)              # 24%
 
 # HoG
 
@@ -370,7 +370,7 @@ Usando sigmoid/sigmoid
 50,4% (7500 iterações)
 48% (20000 iterações)
 
-3 layers:(relu, 300, relu, 300, sigmoid, 300)
+3 layers: (relu, 300, relu, 300, sigmoid, 300)
 46%
 
 1 layer: (relu, 500)
@@ -385,8 +385,8 @@ Usando sigmoid/sigmoid
 2 layers: (softplus, 5, softplus, 10)
 44,9% (7600 iterações)
 
-3 layers:(softplus, 5, softplus, 10, softplus, 10)
+3 layers: (softplus, 5, softplus, 10, softplus, 10)
 40,4%
 
-3 layers:(softplus, 5, softplus, 20, softplus, 10)
+3 layers: (softplus, 5, softplus, 20, softplus, 10)
 42,4%
