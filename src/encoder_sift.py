@@ -13,24 +13,10 @@ def generate_vector(model, img_path):
 
 	feature_vec = [0]*len(model.cluster_centers_)
 	for descriptor in descriptors:
-		# print(descriptor)
-		# print(descriptor.reshape(-1, 1))
-		# print(descriptor.reshape(1, -1))
 		prediction = model.predict(descriptor.reshape(1, -1))
 
-		# print("Prediction is: "+str(prediction))
 		label = prediction[0]
-		# print label
 		feature_vec[label] += 1
-
-	# print("Labels are:", kmeans.labels_)
-	# print len(kp)
-
-	# print des.sum(axis=0).size
-
-	# print feature_vec
-	# print len(feature_vec)
-	# exit()
 
 	return np.array(feature_vec)
 
@@ -82,7 +68,7 @@ def encode():
 	# # cluster = KMeans(n_clusters=100, random_state=0).fit(descriptors)
 	#
 	# # using cached kmeans
-	# k = joblib.load('kmeans_100.pkl')
+	# k = joblib.load('cache/kmeans_100.pkl')
 	#
 	# test_folder = "../img/cifar-10/test"
 	# class_names = os.listdir(test_folder) # there are a folde for each class
@@ -116,11 +102,11 @@ def encode():
 	# np.random.seed(42)
 	# np.random.shuffle(y)
 	#
-	# np.save("X_sift_100_clusters_encoded_images", X)
-	# np.save("Y_sift_100_clusters_encoded_images", y)
+	# np.save("cache/X_sift_100_clusters_encoded_images", X)
+	# np.save("cache/Y_sift_100_clusters_encoded_images", y)
 
-	X = np.load("X_sift_100_clusters_encoded_images.npy")
-	y = np.load("Y_sift_100_clusters_encoded_images.npy")
+	X = np.load("cache/X_sift_100_clusters_encoded_images.npy")
+	y = np.load("cache/Y_sift_100_clusters_encoded_images.npy")
 
 	# spliting the dataset in thee groups
 	X_train = X[:8000]

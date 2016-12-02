@@ -28,16 +28,6 @@ def generate_vector(img_path):
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 	feature_vec = normalize(img.flatten())
 
-	# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-	# feature_vec = normalize(add_position(img.flatten()))
-	# feature_vec = standardize(add_position(img.flatten()))
-
-	# somando os canais
-	# r = img[:,:,0].flatten()
-	# g = img[:,:,1].flatten()
-	# b = img[:,:,2].flatten()
-	# feature_vec = standardize(r + g + b)
-
 	# black and white
 	# img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	# feature_vec = standardize(img.flatten())

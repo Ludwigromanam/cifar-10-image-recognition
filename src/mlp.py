@@ -126,71 +126,11 @@ def mlp_3_layer(l1_act, l1_size, l2_act, l2_size, l3_act, l3_size):
 X_train, y_train, X_validation, y_validation, X_test, y_test = encoder.encode()
 
 models = [
-    # {
-    #     'func': mlp_3_layer,
-    #     'args': [tanh, 300, tanh, 300, sigmoid, 300],
-    #     'title': 'mlp 1 layer com elu'
-    #  },
     {
         'func': mlp_1_layer,
         'args': [ELU, 300],
         'title': 'mlp 1 layer com elu 300 nos'
     },
-    # {
-    #     'func': mlp_1_layer,
-    #     'args': [relu, 5],
-    #     'title': 'mlp 1 layer com relu'
-    #  },
-    # {
-    #     'func': mlp_1_layer,
-    #     'args': [softplus, 5],
-    #     'title': 'mlp 1 layer com softplus'
-    #  },
-    # {
-    #     'func': mlp_1_layer,
-    #     'args': [tanh, 5],
-    #     'title': 'mlp 1 layer com tanh'
-    # },
-    # {
-    #     'func': mlp_2_layer,
-    #     'args': [softplus, 5, softplus, 10],
-    #     'title': 'mlp 2 layer com softplus'
-    #  },
-    # {
-    #     'func': mlp_3_layer,
-    #     'args': [softplus, 5, softplus, 10, softplus, 10],
-    #     'title': 'mlp 3 layer com softplus'
-    #  },
-    # {
-    #     'func': mlp_2_layer,
-    #     'args': [softplus, 5, softplus, 10],
-    #     'title': 'mlp 2 layer com softplus'
-    #  },
-    # {
-    #     'func': mlp_3_layer,
-    #     'args': [softplus, 5, softplus, 10, softplus, 10],
-    #     'title': 'mlp 3 layer com softplus'
-    #  },
-    # {
-    #     'func': mlp_2_layer,
-    #     'args': [SOFTPLUS, 5, SOFTPLUS, 10],
-    #     'title': 'mlp 2 layer com softplus 4x4'
-    #  },
-    # {
-    #     'func': mlp_3_layer,
-    #     'args': [softplus, 5, softplus, 20, softplus, 10],
-    #     'title': 'mlp 3 layer com softplus 20 hidden layer'
-    #  },
-    # {
-    #     'func': mlp_2_layer,
-    #     'args': [softplus, 5],
-    #     'title': 'mlp 1 layer com softplus'
-    #  },
-    # {
-    #     'func': mlp_1_layer,
-    #     'args': [tanh, 5],
-    #     'title': 'mlp 1 layer com tanh'
-    # },
 ]
 
 # for ret_net, title in models:
